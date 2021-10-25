@@ -170,10 +170,19 @@ a{
 }
 
 /*Index and login pages layout*/
-.page-design{
+
+.index-design{
     height: 500px;
     width: 100%;   
-    overflow: hidden;
+    overflow:hidden;
+}
+
+.login-design{
+    height: 1000px;
+    width: 100%;   
+    overflow:hidden;
+    background: -webkit-linear-gradient(top, var(--body-color-one), var(--body-color-two));
+    
 }
 
 .page-design::after {  /* Adding Opactiy to background image*/

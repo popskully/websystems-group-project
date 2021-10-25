@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
-    <title>Login</title>
+    <title>Registration</title>
     <style>
         .error {color: #FF0000;}
     </style>
@@ -17,21 +17,33 @@ session_start();
 <body>
         <div class="login-design container">                 
             <div class="login-form container">                
-                <form method="post" action="controller/login_validate.php">
-                    <h1><strong>YHS Library Management System</strong><img src="img/book.png" alt="" class="logo"> </h1>
+                <form method="post" action="controller/register_validate.php">
+                    <h1><strong>SHS Library Management System</strong><img src="img/book.png" alt="" class="logo"> </h1>
+                    <h3> Welcome! Please fill this form to create an account.</h3>
             
                     <!--Error shown if username or password is entered incorrectly-->
-                    <p><span class="error">* required field</span></p>
                     <?php 
                         if(!empty($_SESSION['loginErr'])){
-                            echo '<div class="error">' . $_SESSION['loginErr'] . '</div>';
+                            echo '<div class="error">' . $_SESSION['loginErr'] . '</div>'.'<br>';
                             unset($_SESSION['loginErr']);
                         }        
                     ?>
                     
                     <fieldset>
+                        <!--username-->
+                        <label for="username" class="username" value="<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];} else {echo "";} ?>"><strong>Username: <span class="error">*</span></strong></label>
+                        <span class="error">
+                        <?php 
+                            if(!empty( $_SESSION['usernameErr'])){
+                                echo  $_SESSION['usernameErr'];
+                                unset($_SESSION['usernameErr']);
+                            }        
+                        ?>
+                        </span>
+                        <input type="text" name="username" required>
+
                         <!--email-->
-                        <label for="email" class="email" value="<?php if(isset($_COOKIE['email'])){echo $_COOKIE['email'];} else {echo "";} ?>"><strong>Email: <span class="error">*</span></strong></label>
+                        <label for="email" class="email" value="<?php if(isset($_COOKIE['email'])){echo $_COOKIE['email'];} else {echo "";} ?>"><strong>Email Address: <span class="error">*</span></strong></label>
                         <span class="error">
                         <?php 
                             if(!empty( $_SESSION['emailErr'])){
@@ -53,21 +65,32 @@ session_start();
                             }        
                         ?>
                         </span>
-                        <input type="password" name="password" required>
+                        <input type="password" name="password"  required>
+
+                        <!--Re-Password-->
+                        <label for="password" class="re_password"><strong>Confirm Password: <span class="error">*</span></strong></label>
+                        <span class="error">
+                        <?php 
+                            if(!empty($_SESSION['re_passwordErr'])){
+                                echo  $_SESSION['re_passwordErr'];
+                                unset($_SESSION['re_passwordErr']);
+                            }        
+                        ?>
+                        </span>
+                        <input type="password" name="re_password"  required>
                     </fieldset>
+
 
                     <fieldset>
-                    <button type="submit"class="btn-submit" name="submit">Login</button><br>
+                    <button type=""class="btn-submit" name="submit">Register</button><br>
                     <input class="form-check-input" type="checkbox" name="remember"> Remember me
                     </fieldset>
-
                     <fieldset class="other-actions">
-                        <p>Don't have an account? <a href="HSregister.php">Sign up now</a>.</p>
-
+                    <p>Already have an account? <a href="HSlogin.php">Login here</a>.</p>
                     </fieldset>
                 </form>
             </div>
         </div>  
-     
+   
 </body>
 </html>
