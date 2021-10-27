@@ -1,7 +1,7 @@
 /*CSS VARIABLES 
 Header and side nav
 Index Page 
-Login Page
+Login and sign up Page
 LMS Body Layout
 Add book form and progress bar
 Submission page
@@ -19,7 +19,7 @@ Media Queries
     --form-color: rgb(244, 246, 248) ;
     --light-grey: rgb(228, 227, 231);
     --section-color:  rgb(108, 88, 221);
-    --theme-color: rgb(18, 243, 67);
+    --theme-color: rgb(8, 190, 38);
 
     --body-font:'Fira Sans', sans-serif;
 
@@ -271,7 +271,7 @@ margin-bottom: 5px;
     font-size: var(--smaller-font-size);
 }
 
-/* Index Page */
+/* Index Page Button*/
 
 
 .welcome-button{
@@ -318,7 +318,7 @@ margin-bottom: 5px;
     right: 0;
 }
 
-/* Login Page */
+/* Login and Sign up Form*/
 
 .login-form{
     background-color: var(--color-light);
@@ -394,6 +394,68 @@ label.light {
 
 .btn-submit:hover {
     opacity: 1;
+}
+
+/* Sign up page slider */
+
+.slide-controls{
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0 25px 0;
+    justify-content: space-between;
+    border: 1px solid var(--theme-color);
+    border-radius: 5px;
+    
+}
+.slide-controls .slide{
+    height: 100%;
+    width: 100%;
+    color: var(--body-color-two);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.6s ease;
+}
+.slide-controls label.admin{
+    color: var(--first-color);
+}
+.slide-controls .slider-tab{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(top, var(--first-color), var(--theme-color));
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+input[type="radio"]{
+    display: none;
+}
+
+#admin:checked ~ .slider-tab{
+    left: 50%;
+}
+#admin:checked ~ label.admin{
+    color: var(--body-color-two);
+    cursor: default;
+    user-select: none;
+}
+#admin:checked ~ label.librarian{
+    color: var(--first-color);
+}
+#librarian:checked ~ label.admin{
+    color: var(--first-color);
+}
+#librarian:checked ~ label.librarian{
+    cursor: default;
+    user-select: none;
 }
 
 /* LMS Body Layout - Reusable Designs*/

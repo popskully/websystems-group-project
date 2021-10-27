@@ -2,7 +2,7 @@
 
     require_once "../include/config.php";
 
-    $username = $email =  $password = $re_password = "";
+    $username = $email =  $password = $re_password = $type ="";
     $usernameErr = $emailErr = $passwordErr = $re_passwordErr ="";
     $loginErr = "Please fill in all fields with valid information";
 
@@ -13,7 +13,7 @@
             $email = mysqli_real_escape_string($conn, $_POST['email']);
             $password = mysqli_real_escape_string($conn, $_POST['password']);
             $re_password = mysqli_real_escape_string($conn, $_POST['re_password']);
-
+            $type = $_POST['type'];
             if (!preg_match("/^[a-zA-Z ]+$/",$username)){
                 $usernameErr ="Username must contain only letters and space";
             }
@@ -29,14 +29,15 @@
             
             
             
+            
             if(empty($usernameErr) && empty($emailErr) && empty($passwordErr) && empty($re_passwordErr)){
 
-                $sql = "INSERT INTO user (username, email,password) VALUES ('". $username ."', '". $email ."','". md5($password) ."')";
+                $sql = "INSERT INTO librarian (name, email, type, password) VALUES ('". $username ."', '". $email ."','". $type ."','". md5($password) ."')";
                     
                 
                 if(mysqli_query($conn, $sql))
                 {
-                    header("Location: ../HSaddbook.php");
+                    header("Location: ../HSlogin.php");
                     exit();
                 }else{
                     session_start();

@@ -25,7 +25,7 @@
         
         
         if(empty($emailErr) && empty($passwordErr) ){
-            $result = mysqli_query($conn, "SELECT * FROM user WHERE email = '". $email. "' and password = '". md5($password). "'");
+           $result = mysqli_query($conn, "SELECT * FROM librarian WHERE email = '". $email. "' and password = '". md5($password). "'");
 
             if(!empty($result)){
                 if($row = mysqli_fetch_array($result)){
@@ -33,6 +33,7 @@
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['password'] = $row['password'];
+                    $_SESSION['type'] = $row['type'];
                     $_SESSION['loggedin'] = true;
                     header("location: ../HSaddbook.php");
                 }
