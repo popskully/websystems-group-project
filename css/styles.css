@@ -3,6 +3,7 @@ Header and side nav
 Index Page 
 Login and sign up Page
 LMS Body Layout
+Dashboard
 Add book form and progress bar
 Submission page
 Media Queries
@@ -494,6 +495,79 @@ input[type="radio"]{
 }
 
 
+
+/*Dashboard*/
+
+.dashboard-title{
+    margin: 3px 0 15px 0;
+    padding: 5px;
+}
+
+
+.dash-container1{
+    float: right;
+}
+
+.dash-container2{
+    float: left;
+}
+
+.dash-container3{
+    float: center;
+}
+
+.dash-container1 .card,
+.dash-container2 .card,
+.dash-container3 .card{
+    text-align:center;
+    margin-top:-20px;
+    width: 300px;
+    
+}
+
+.dash-container1 .card-title,
+.dash-container2 .card-title,
+.dash-container3 .card-title{
+
+    font-size:var(--h3-font-size);
+}
+
+.dash-container1 p,
+.dash-container2 p,
+.dash-container3 p{
+    font-size:3em;
+}
+
+.dash-container1 .dash,
+.dash-container2 .dash,
+.dash-container3 .dash{
+    background-color: var(--color-light);
+    font-size:.7em;
+}
+
+.dash-container1 .dash:hover,
+.dash-container2 .dash:hover,
+.dash-container3 .dash:hover{
+    background-color: var(--theme-color);
+}
+
+
+.dash-card1{
+    background-color: var(--theme-color);
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.dash-card2{
+    background-color: var(--color-light);
+    margin-bottom: 70px;
+}
+
+.dash-card3{
+    background-color: var(--color-light);
+}
+
+
 /* Add book form */ 
 
 .form1{
@@ -732,6 +806,7 @@ opacity: 0.7;
 
 /***** Smaller and large screens ******/
 
+
 @media screen and (max-width: 900px) {
     .sidenav {
         width: 100%;
@@ -782,6 +857,37 @@ opacity: 0.7;
     .sidenav-title{
         content: "SANA";
     }
+
+    .dash-container1 .card,
+    .dash-container2 .card,
+    .dash-container3 .card{
+    text-align:center;
+    margin-top:-20px;
+    width: 150px;
+    
+    }
+
+    .dash-container1 p,
+    .dash-container2 p,
+    .dash-container3 p{
+        font-size:2em;
+}
+}
+
+@media screen and (max-width: 903px) {
+    .dash-container1 .card,
+    .dash-container2 .card,
+    .dash-container3 .card{
+    text-align:center;
+    margin-top:-20px;
+    width: 150px;
+    }
+
+    .dash-container1 p,
+    .dash-container2 p,
+    .dash-container3 p{
+        font-size:1em;
+}
 }
 
 @media screen and (max-width: 640px) {
@@ -795,6 +901,20 @@ opacity: 0.7;
     .sidenav-title{
         content: "SANA";
     }
+
+    .dash-container1 .card,
+    .dash-container2 .card,
+    .dash-container3 .card{
+    text-align:center;
+    margin-top:-20px;
+    width: 150px;
+    }
+
+    .dash-container1 .card-title,
+    .dash-container2 .card-title,
+    .dash-container3 .card-title{
+        font-size:1em;
+}
 }
 
 
@@ -826,6 +946,20 @@ opacity: 0.7;
         content: "SANA";
     }
 
+    .dash-container1 .card,
+    .dash-container2 .card,
+    .dash-container3 .card{
+        text-align:center;
+        margin-top:-20px;
+        width: 40px;
+    }
+
+    .dash-container1 p,
+    .dash-container2 p,
+    .dash-container3 p{
+        font-size:1em;
+    }
+
 }
 
 
@@ -846,6 +980,15 @@ opacity: 0.7;
     .sidenav-title{
         content: "SANA";
     }
+
+    .dash-container1 .card,
+    .dash-container2 .card,
+    .dash-container3 .card{
+    text-align:center;
+    margin-top:-20px;
+    width: 20px;
+    }
+
 }
 
 @media screen and (max-width: 2500px) {
@@ -865,6 +1008,15 @@ opacity: 0.7;
         height: 3px;
         top: 20px;
         margin-left: 80px;
+    }
+
+    .dash-container1 .card,
+    .dash-container2 .card,
+    .dash-container3 .card{
+    text-align:center;
+    margin-top:-20px;
+    width: 100px;
+    
     }
 
     

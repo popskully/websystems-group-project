@@ -35,7 +35,7 @@
                     $_SESSION['password'] = $row['password'];
                     $_SESSION['type'] = $row['type'];
                     $_SESSION['loggedin'] = true;
-                    header("location: ../HSaddbook.php");
+                    header("location: ../dashboard.php");
                 }
             }
         }
