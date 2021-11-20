@@ -35,7 +35,7 @@
             <a href="HSviewbooks.php"><i class="fas fa-eye"></i> View Books</a>
             <a href="issuebooks.php"><i class="fas fa-asterisk"></i> Issue Books</a>
             <a href="patrons.php"><i class="fas fa-search"></i> Search Patron Records</a>
-            <a href="account.php"><i class="fas fa-users-cog"></i> Manage Accounts</a>
+            <a href="displayUser.php"><i class="fas fa-users-cog"></i> Manage Accounts</a>
         </div>
         
     </div>
