@@ -462,7 +462,7 @@ input[type="radio"]{
 /* LMS Body Layout - Reusable Designs*/
 
 .main-body{
-    margin-left: 160px;
+    margin-left: 168px;
     padding: 0px 30px;
 }
 
@@ -471,7 +471,7 @@ input[type="radio"]{
     margin-top: 10px;
     padding:5px;
     border: var(--theme-color) 1px solid;
-    height: 750px;
+    height: 1500px;
 }
 
 .section-heading{
@@ -802,6 +802,36 @@ opacity: 0.7;
     background-color: var(--color-light);
 }
 
+/*Table Buttons*/
+.btn-borrowed{
+    background-color: #f44336;
+    color: var(--color-light);
+}
+
+.btn-returned{
+    background-color: #4CAF50;
+    color: var(--color-light);
+}
+
+.btn-process{
+    background-color: #4CAF50;
+}
+
+.btn-delete{
+    background-color: #f44336;
+}
+
+.return-button{
+    float: right;
+    border: 1px solid var(--theme-color);
+    color: var(--color-light);
+    padding: 10px;
+    margin: 20px 0px 20px 0px;
+    font-size: var(--normal-font-size);
+    background: -webkit-linear-gradient(top, var(--first-color), var(--theme-color));
+}
+
+
 
 
 /***** Smaller and large screens ******/
@@ -855,7 +885,7 @@ opacity: 0.7;
         margin-left: 90px;
     }
     .sidenav-title{
-        content: "SANA";
+        content: "YOUNG";
     }
 
     .dash-container1 .card,
@@ -899,7 +929,7 @@ opacity: 0.7;
         margin-left: 40px;
     }
     .sidenav-title{
-        content: "SANA";
+        content: "YOUNG";
     }
 
     .dash-container1 .card,
@@ -943,7 +973,7 @@ opacity: 0.7;
     
     }
     .sidenav-title{
-        content: "SANA";
+        content: "YOUNG";
     }
 
     .dash-container1 .card,
@@ -978,7 +1008,7 @@ opacity: 0.7;
         display: block; 
     }
     .sidenav-title{
-        content: "SANA";
+        content: "YOUNG";
     }
 
     .dash-container1 .card,

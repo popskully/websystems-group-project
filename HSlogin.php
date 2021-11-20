@@ -63,6 +63,7 @@ session_start();
 
                     <fieldset class="other-actions">
                         <p>Don't have an account? <a href="HSregister.php">Sign up now</a>.</p>
+                        <p>Go back to Home <a href="HSindex.php">Click Here</a>.</p>
 
                     </fieldset>
                 </form>

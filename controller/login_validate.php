@@ -1,5 +1,6 @@
 <?php
     require_once "../include/config.php";
+    session_start();
     
     if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
         header("location: ../HSaddbook.php");
@@ -29,6 +30,7 @@
 
             if(!empty($result)){
                 if($row = mysqli_fetch_array($result)){
+                    session_start();
                     $_SESSION['userid'] = $row['userid'];
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['email'] = $row['email'];
@@ -36,6 +38,12 @@
                     $_SESSION['type'] = $row['type'];
                     $_SESSION['loggedin'] = true;
                     header("location: ../dashboard.php");
+                } else{
+                    session_start();
+                    $_SESSION['emailErr'] =$emailErr ;
+                    $_SESSION['passwordErr'] = $passwordErr  ;
+                    $_SESSION['loginErr'] = $loginErr;
+                    header("Location: ../HSlogin.php");
                 }
             }
         }

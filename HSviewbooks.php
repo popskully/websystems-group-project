@@ -225,7 +225,7 @@
             });   
 
 
-             // Issue record
+             // Issue record - sends book ID in URL to view book details page
             $('#bookTable').on('click','.issueBook',function(){
                 var id = $(this).data('id');
 
@@ -236,13 +236,8 @@
                     type: 'post',
                     data: {request: 2, id: id},
                     success: function(data){
-                        alert(id);  //To be removed
-                        //Redirects to details page and send id in url
+                        alert("Issue Book ID#" + id); 
                         window.location.href = 'bookDetails.php?id='+id;
-
-                        //Change submission to book.php Send id to it. use Id to get data from database
-                        //press check out book, opens a little window to enter the patron Id
-                        //if in database, add info to borrow book list
                     }
                 });
 

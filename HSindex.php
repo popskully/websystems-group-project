@@ -21,7 +21,9 @@
         <div class="page-heading">
             <h3><strong>Online Library Management System</strong></h3>
             <div class="welcome-button container">             
-                    <button type="submit" class="welcome-btn" onclick="location.href='HSlogin.php'"><span>Login In Here</span></button>                       
+                    <button type="submit" class="welcome-btn" onclick="location.href='HSlogin.php'"><span>Login In Here</span></button>      
+                    
+                    <button type="submit" class="welcome-btn" onclick="location.href='guest/guestviewbooks.php'"><span>Log in as a Guest</span></button> 
                 </div>
         </div>
 

@@ -15,6 +15,8 @@ $dbname = "highschoolbooks_db";
         echo "You are not connected".$e;
     
     }
+    //set timezone
+    date_default_timezone_set('America/Los_Angeles');
 
 
 ?>
